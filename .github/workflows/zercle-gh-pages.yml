@@ -34,7 +34,8 @@ jobs:
           cmd: build
         
       - name: Publish to Github Pages
-        uses: crazy-max/ghaction-github-pages@v2
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           # deploy to gh-pages branch
           target_branch: gh-pages
