@@ -17,21 +17,21 @@ jobs:
         uses: actions/checkout@v3
 
       # Run a build step here if your project requires
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
-          # install deps with pnpm
-          run_install: true
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: lts/*
-          cache: pnpm
+          cache: yarn
+
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
 
       - name: Build VuePress site
-        run: pnpm build
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
         
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
