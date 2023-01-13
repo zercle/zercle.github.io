@@ -27,33 +27,37 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    repo: '',
+    repo: 'https://github.com/zercle',
     editLinks: false,
     docsDir: '',
     editLinkText: '',
     lastUpdated: false,
+    search: true,
     nav: [
       {
-        text: 'Guide',
-        link: '/guide/',
+        text: 'Blog',
+        link: '/blog/',
       },
       {
-        text: 'Config',
-        link: '/config/'
+        text: 'About Us',
+        link: '/about-us/'
       },
       {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
+        text: 'Our Services',
+        link: '/our-services/'
+      },
+      {
+        text: 'Contact Us',
+        link: '/contact/'
       }
     ],
     sidebar: {
-      '/guide/': [
+      '/blog/': [
         {
-          title: 'Guide',
+          title: 'Blog',
           collapsable: false,
           children: [
-            '',
-            'using-vue',
+            'cf-email-routing',
           ]
         }
       ],
