@@ -1,11 +1,15 @@
-## Custom Software Development
-We do custom software development while adhering to best practices and testing.
+## Introduction
+Welcome to Zercle Technology! We are a team of passionate software developers based in Thailand. Our mission is to deliver top-notch solutions that transform businesses.
 ##
 
-## Application Development & Maintenance
-Our team of professionals is ready to take care of your software projects.
+## Services Overview
+Explore our range of services, from custom software development to IT consultancy. We combine technical expertise with creativity to meet your unique needs.
 ##
 
-## IT consultancy
-We provide TOP software developers from Thailand with advanced technical skills.
+## Software Development
+We specialize in building robust, scalable software solutions. From web applications to mobile apps, we’ve got you covered.
+##
+
+## IT Consultancy
+Need strategic guidance? Our experts provide tailored advice to optimize your technology stack and drive growth.
 ##

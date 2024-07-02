@@ -7,11 +7,11 @@ actionText: null
 actionLink: null
 features:
 - title: Custom Software Development
-  details: We do custom software development while adhering to best practices and testing.
+  details: We specialize in building robust, scalable software solutions. From web applications to mobile apps, we’ve got you covered.
 - title: Application Development & Maintenance
-  details: Our team of professionals is ready to take care of your software projects.
+  details: We excel in Go, JavaScript, Infrastructure, and more. Our team stays up-to-date with the latest frameworks and tools.
 - title: IT consultancy
-  details: We provide TOP software developers from Thailand with advanced technical skills.
+  details: Need strategic guidance? Our experts provide tailored advice to optimize your technology stack and drive growth.
 # footer: cc-by-4.0 | Zercle Technology
 ---
 
