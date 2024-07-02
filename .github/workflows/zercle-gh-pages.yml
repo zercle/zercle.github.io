@@ -14,24 +14,22 @@ jobs:
     name: Publish to Github Pages
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # Run a build step here if your project requires
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
-          cache: yarn
+          node-version: 'lts/*'
+          cache: 'pnpm'
 
-      - name: Run install
-        uses: borales/actions-yarn@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          cmd: install
+          version: latest
+          run_install: true
 
       - name: Build VuePress site
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build
+        run: pnpm build
         
       - name: Publish to Github Pages
         if: success()
