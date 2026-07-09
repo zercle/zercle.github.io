@@ -1,3 +1,5 @@
-# esbuild ships a postinstall; skip it for hermetic/CI builds.
+# onlyBuiltDependencies was removed in pnpm 11; approve postinstall scripts per-package via allowBuilds.
 allowBuilds:
-  esbuild: false
+  esbuild: true
+  sharp: true
+  workerd: true
