@@ -1,3 +1,11 @@
+---
+title: Using Cloudflare Email Routing
+description: How Cloudflare Email Routing keeps your personal inbox private, for free — a practical setup guide.
+date: 2025-09-15
+author: Zercle Technology
+tags: [cloudflare, email, guides]
+---
+
 # Using Cloudflare Email Routing
 
 ## What's Cloudflare Email Routing

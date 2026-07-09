@@ -38,7 +38,12 @@ export default {
           text: 'Blog',
           collapsed: false,
           items: [
-            { text: 'Cloudflare Email Routing', link: '/blog/cf-email-routing' }
+            { text: 'Linux Backups That Actually Work', link: '/blog/linux-backups-that-work' },
+            { text: 'Why We Choose Boring Technology', link: '/blog/boring-technology' },
+            { text: 'Building Observable Go Services', link: '/blog/observable-go-services' },
+            { text: 'Zero-Trust Access with Cloudflare Tunnel', link: '/blog/cloudflare-tunnel-zero-trust' },
+            { text: 'Graceful Shutdown in Go HTTP Servers', link: '/blog/go-graceful-shutdown' },
+            { text: 'Using Cloudflare Email Routing', link: '/blog/cf-email-routing' }
           ]
         }
       ]

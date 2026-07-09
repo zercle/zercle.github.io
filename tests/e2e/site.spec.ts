@@ -72,23 +72,23 @@ test.describe('Zercle VitePress site', () => {
   test.describe('Blog article', () => {
     test('cf-email-routing is reachable from the blog index and renders its H1', async ({ page }) => {
       await page.goto('/blog/')
-      const articleLink = page.getByRole('link', {
-        name: /Using Cloudflare Email Routing/,
-      })
+      const articleLink = page
+        .locator('.vp-doc a[href="/blog/cf-email-routing"]')
+        .first()
       await expect(articleLink).toBeVisible()
       await expect(articleLink).toHaveAttribute('href', '/blog/cf-email-routing')
 
       await articleLink.click()
       await page.waitForURL('**/blog/cf-email-routing')
       await expect(
-        page.getByRole('heading', { name: 'Using Cloudflare Email Routing', level: 1 }),
+        page.getByRole('main').getByRole('heading', { name: 'Using Cloudflare Email Routing', level: 1 }),
       ).toBeVisible()
 
       const direct = await page.goto('/blog/cf-email-routing')
       expect(direct, 'direct navigation to article produced no response').not.toBeNull()
       expect(direct!.status(), 'blog article navigation should be 200').toBe(200)
       await expect(
-        page.getByRole('heading', { name: 'Using Cloudflare Email Routing', level: 1 }),
+        page.getByRole('main').getByRole('heading', { name: 'Using Cloudflare Email Routing', level: 1 }),
       ).toBeVisible()
     })
   })

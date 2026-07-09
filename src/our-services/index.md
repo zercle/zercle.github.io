@@ -21,3 +21,47 @@ Sometimes the right deliverable is advice, not code. We take on short engagement
 ## How We Work
 
 We prefer small teams, short feedback loops, and written specifications before implementation. Estimates are honest; if a problem is genuinely hard, we say so. We communicate primarily in English over email and shared documents, and we keep clients close to the work — no black-box development.
+
+## Technologies
+
+We rely on boring, well-understood technology to reduce risk and operational burden.
+
+| Technology | Where we use it |
+| :--- | :--- |
+| **Go** | Primary language for high-throughput, reliable backend services. |
+| **JavaScript/TypeScript** | Used for front-end development and internal tooling. |
+| **Linux** | The foundation of all our server-side environments. |
+| **Docker** | Used for containerizing workloads and ensuring consistent deployments. |
+| **Cloudflare** | Provides DNS, edge caching, secure tunnels, Workers, and email routing. |
+| **PostgreSQL/SQLite** | Our chosen relational and embedded databases for data storage. |
+| **CI/CD** | Git-based pipelines to automate testing and deployment. |
+| **Monitoring** | Prometheus and Grafana-style tooling for observability and alerting. |
+
+## Our Approach to a Project
+
+1. **Understand & specify:** We define requirements and project goals before touching code.
+2. **Design the simplest thing that works:** We prefer straightforward solutions that remain maintainable over time.
+3. **Build incrementally with short feedback loops:** We deliver working software frequently to ensure progress aligns with goals.
+4. **Make it observable & deployable:** We instrument systems early to ensure they can be monitored and operated reliably.
+5. **Operate & maintain:** We take long-term responsibility for the systems we build and run.
+
+## What we don't do
+
+* We do not develop speculative features without a clear, written specification.
+* We do not perform performance optimization before measuring actual bottlenecks.
+* We do not accept projects or systems that we cannot support or operate reliably.
+* We do not favor complex, hype-driven architectures over simple, robust ones.
+
+## Engagement FAQ
+
+### Do you work with companies outside Thailand?
+Yes, we serve clients globally. As long as our remote-first, written-communication style fits your needs, we are happy to assist.
+
+### How do you charge?
+Pricing depends on the scope, complexity, and duration of the work. We provide clear estimates based on our initial assessment of your requirements.
+
+### Can you take over an existing codebase?
+Yes, we frequently audit and adopt legacy codebases. We start by stabilizing the current system before introducing improvements or new features.
+
+### Do you do fixed-scope projects?
+Yes, we can perform fixed-scope engagements if the requirements are well-defined. For more ambiguous problems, we recommend a time-and-materials approach to allow for flexibility and discovery.
