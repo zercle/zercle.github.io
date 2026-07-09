@@ -1,20 +1,29 @@
 ---
-home: true
-heroImage: /img/zercle_logo_on_light.png
-tagline: null
-heroText: null
-actionText: null
-actionLink: null
-features:
-- title: Custom Software Development
-  details: We specialize in building robust, scalable software solutions. From web applications to mobile apps, we’ve got you covered.
-- title: Application Development & Maintenance
-  details: We excel in Go, JavaScript, Infrastructure, and more. Our team stays up-to-date with the latest frameworks and tools.
-- title: IT consultancy
-  details: Need strategic guidance? Our experts provide tailored advice to optimize your technology stack and drive growth.
-# footer: cc-by-4.0 | Zercle Technology
----
+layout: home
 
-::: slot footer
-[cc-by-4.0](https://creativecommons.org/licenses/by/4.0/) | [Zercle Technology](https://github.com/zercle)
-:::
+hero:
+  name: Zercle Technology
+  text: Software, scaled with intent
+  tagline: Custom software, infrastructure & IT consultancy — built in Khon Kaen, Thailand.
+  image:
+    src: /img/zercle_logo_on_light.png
+    alt: Zercle Technology logo
+  actions:
+    - theme: brand
+      text: Our Services
+      link: /our-services/
+    - theme: alt
+      text: Contact Us
+      link: /contact/
+
+features:
+  - icon: 🛠️
+    title: Custom Software Development
+    details: Robust, scalable software — from web platforms to backend systems — engineered to fit your business.
+  - icon: ⚙️
+    title: Application Development & Maintenance
+    details: Go, JavaScript, and infrastructure expertise. We keep your stack current, observable, and dependable.
+  - icon: 🧭
+    title: IT Consultancy
+    details: Strategic guidance to optimize your technology stack, reduce risk, and drive sustainable growth.
+---

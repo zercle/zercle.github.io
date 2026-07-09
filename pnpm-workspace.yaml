@@ -1,0 +1,3 @@
+# esbuild ships a postinstall; skip it for hermetic/CI builds.
+allowBuilds:
+  esbuild: false

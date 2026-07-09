@@ -1,45 +1,61 @@
-name: Deploy to Zercle Github (production)
+# Deploys the VitePress build to GitHub Pages.
+# One-time repo setup required: Settings → Pages → Build and deployment → Source = "GitHub Actions".
+
+name: Deploy to Zercle GitHub Pages (production)
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  publish:
+  build:
+    name: Build site
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    name: Publish to Github Pages
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          version: latest
-          run_install: false
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
+          node-version: '24'
           cache: 'pnpm'
 
-      - name: Build VuePress site
-        run: pnpm i && pnpm build
-        
-      - name: Publish to Github Pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v3
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build VitePress site
+        run: pnpm build
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
         with:
-          # deploy to gh-pages branch
-          target_branch: gh-pages
-          # deploy the default output dir of VuePress
-          build_dir: ./src/.vuepress/dist
-        env:
-          # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_PAT: ${{ secrets.GH_PAT }}
+          path: src/.vitepress/dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
